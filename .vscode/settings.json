@@ -1,0 +1,15 @@
+{
+  "editor.fontSize": 16,
+  // 重新设定tabsize
+  "editor.tabSize": 2,
+  // #每次保存的时候自动格式化
+  "editor.formatOnSave": true,
+  //  新版本
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
+  // prettier 设置语句末尾不加分号
+  "prettier.semi": false,
+  // prettier 设置强制单引号
+  "prettier.singleQuote": true
+}
