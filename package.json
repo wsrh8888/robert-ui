@@ -4,10 +4,9 @@
   "description": "",
   "scripts": {
     "dev": "webpack --watch --config build/webpack.config.js",
-    "build": "webpack",
     "start": "webpack-dev-server  --config build/webpack.config.js",
     "script": "build webpack",
-    "test": "webpack --config build/webpack.config.js",
+    "build": "webpack --config build/webpack.config.js",
     "format": "prettier --config ./.prettierrc --write ./123.js"
   },
   "author": "",
@@ -28,6 +27,8 @@
     "ts-loader": "^6.2.1",
     "typescript": "^3.8.3",
     "url-loader": "^4.0.0",
+    "vue-loader": "^15.9.0",
+    "vue-template-compiler": "^2.6.11",
     "webpack": "^4.42.0",
     "webpack-cli": "^3.3.11",
     "webpack-dev-server": "^3.10.3"
