@@ -38,10 +38,14 @@ module.exports = {
     new VueLoaderPlugin(),
   ],
   resolve: {
-    extensions: ['.tsx', '.ts', '.js'],
+    extensions: ['.tsx', '.ts', '.js', '.vue', '.json'],
     alias: {
-      'vue$': 'vue/dist/vue.esm.js' // 'vue/dist/vue.common.js' for webpack 1
-    }
+      main: path.resolve(__dirname, '../src'),
+      packages: path.resolve(__dirname, '../packages'),
+      examples: path.resolve(__dirname, '../examples'),
+      'element-ui': path.resolve(__dirname, '../')
+    },
+    modules: ['node_modules']
   },
 
   output: {

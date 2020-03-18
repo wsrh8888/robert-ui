@@ -1,5 +1,8 @@
 <template>
-    <div id="app">dfvfvf</div>
+    <div>
+        sads
+        <!-- <ElAlert></ElAlert> -->
+    </div>
 </template>
 
 <script >
