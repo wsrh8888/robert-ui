@@ -1,5 +1,5 @@
 <template>
-    <div>sadfsfs</div>
+    <div>我是alert</div>
 </template>
 
 <script >

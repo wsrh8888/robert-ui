@@ -1,7 +1,6 @@
 <template>
     <div>
-        sads
-        <!-- <ElAlert></ElAlert> -->
+        <ElAlert></ElAlert>
     </div>
 </template>
 

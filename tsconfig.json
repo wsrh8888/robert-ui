@@ -2,11 +2,18 @@
   "include": [
     "src/**/*",
     "packages/**/*",
-    "./vue-shim.d.ts",
-    "examples/**/*"
+    "examples/**/*",
+    "examples/**/*.vue",
+    ".vue"
   ],
   "exclude": [
     "node_modules"
+  ],
+  "typeAcquisition": {
+    "enable": true
+  },
+  "files": [
+    "./vue-shim.d.ts"
   ],
   "compilerOptions": {
     "allowSyntheticDefaultImports": true,
@@ -15,6 +22,7 @@
     "module": "esnext",
     "target": "es5",
     "moduleResolution": "node",
+    "baseUrl": ".", // 工作根目录
     "isolatedModules": true,
     "lib": [
       "dom",
@@ -23,7 +31,13 @@
       "es7",
       "es2015.promise"
     ],
+    "jsxFactory": "h",
     "sourceMap": true,
-    "pretty": true
+    "pretty": true,
+    "paths": { // 指定模块的路径，和baseUrl有关联，和webpack中resolve.alias配置一样
+      "main": [ //指定后可以在文件之直接 import * from 'src';
+        "./src"
+      ],
+    },
   }
 }
