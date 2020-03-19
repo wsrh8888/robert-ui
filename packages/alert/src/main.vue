@@ -1,16 +1,39 @@
 <template>
-    <div>{{msg}}</div>
+   <transition>
+    <div>
+      <i ></i>
+      <slot>{{ title }}</slot>
+    </div>
+  </transition>
 </template>
 
 
 <script lang="ts">
-import Vue from 'vue'
-  import Component from 'vue-class-component'
+import {Component, Prop, Vue} from 'vue-property-decorator'
 
-  @Component
-  export default class RbAlert extends Vue {
-    // 初始化数据
-    msg = 456
+@Component
+export default class RbAlert extends Vue {
+  @Prop({
+    type: String,
+    default: ''
+  })
+  public title: string
 
+  name:string = 'Simon Zhang'
+
+  // computed
+  get MyName():string {
+    return `My name is ${this.name}`
   }
+
+  // methods
+  sayHello():void {
+    // alert(`Hello ${this.name}`)
+  }
+
+  mounted() {
+    this.sayHello();
+  }
+
+}
 </script>

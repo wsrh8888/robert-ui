@@ -1,6 +1,6 @@
 <template>
     <div>
-        <rb-alert></rb-alert>
+      <rb-alert title="dddd"></rb-alert>
        <router-view/>
     </div>
 </template>
