@@ -5,7 +5,7 @@ const VueLoaderPlugin = require('vue-loader/lib/plugin');
 
 module.exports = {
   mode: "production",
-  entry: './examples/play.ts',
+  entry: './examples/main.ts',
   devtool: 'inline-source-map',
   module: {
     rules: [
