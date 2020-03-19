@@ -4,6 +4,7 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const VueLoaderPlugin = require('vue-loader/lib/plugin');
 
 module.exports = {
+  mode: "production",
   entry: './examples/play.ts',
   devtool: 'inline-source-map',
   module: {
@@ -24,6 +25,15 @@ module.exports = {
         ]
       }
     ]
+  },
+  performance: {
+    hints: false
+  },
+  stats: {
+    children: false
+  },
+  optimization: {
+    minimize: false //必须为false。否则在生产环境无法解析组件
   },
   devServer: {
     host: '127.0.0.1',

@@ -3,11 +3,9 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "dev": "webpack --watch --config build/webpack.config.js",
-    "start": "webpack-dev-server  --config build/webpack.config.js",
-    "script": "build webpack",
-    "build": "webpack --config build/webpack.config.js",
-    "format": "prettier --config ./.prettierrc --write ./123.js"
+    "bootstrap": " npm i || yarn",
+    "dev": "webpack-dev-server --watch --config build/webpack.config.js",
+    "build": "webpack --config build/webpack.config.js"
   },
   "author": "",
   "license": "ISC",
