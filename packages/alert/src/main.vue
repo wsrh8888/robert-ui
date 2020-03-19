@@ -1,9 +1,16 @@
 <template>
-    <div>我是alert</div>
+    <div>{{msg}}</div>
 </template>
 
-<script >
-export default {
-    name: "ElAlert"
-};
+
+<script lang="ts">
+import Vue from 'vue'
+  import Component from 'vue-class-component'
+
+  @Component
+  export default class RbAlert extends Vue {
+    // 初始化数据
+    msg = 456
+
+  }
 </script>

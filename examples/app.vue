@@ -1,6 +1,6 @@
 <template>
     <div>
-        <ElAlert></ElAlert>
+        <rb-alert></rb-alert>
     </div>
 </template>
 
