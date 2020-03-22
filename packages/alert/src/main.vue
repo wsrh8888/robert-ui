@@ -1,39 +1,35 @@
 <template>
-   <transition>
-    <div>
-      <i ></i>
-      <slot>{{ title }}</slot>
-    </div>
-  </transition>
+    <transition name="el-alert-fade">
+        <div>
+            <i></i>
+            <slot>{{ title }}</slot>
+        </div>
+    </transition>
 </template>
 
 
 <script lang="ts">
-import {Component, Prop, Vue} from 'vue-property-decorator'
+import { Component, Prop, Vue } from "vue-property-decorator";
 
 @Component
 export default class RbAlert extends Vue {
-  @Prop({
-    type: String,
-    default: ''
-  })
-  public title: string
+    @Prop({
+        type: String,
+        default: ""
+    })
+    public title: string;
 
-  name:string = 'Simon Zhang'
+    get MyName(): string {
+        return `ddd`;
+    }
 
-  // computed
-  get MyName():string {
-    return `My name is ${this.name}`
-  }
+    // methods
+    sayHello(): void {
+        // alert(`Hello ${this.name}`)
+    }
 
-  // methods
-  sayHello():void {
-    // alert(`Hello ${this.name}`)
-  }
-
-  mounted() {
-    this.sayHello();
-  }
-
+    mounted() {
+        this.sayHello();
+    }
 }
 </script>
