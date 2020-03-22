@@ -4,7 +4,7 @@
   "description": "",
   "scripts": {
     "bootstrap": " npm i || yarn",
-    "dev": "webpack-dev-server --watch --config build/webpack.config.js",
+    "dev": "webpack-dev-server --watch -inline --progress  --config build/webpack.config.js",
     "build": "webpack --config build/webpack.config.js"
   },
   "author": "",
@@ -19,8 +19,10 @@
     "eslint-loader": "^3.0.3",
     "eslint-plugin-prettier": "^3.1.2",
     "file-loader": "^6.0.0",
+    "friendly-errors-webpack-plugin": "^1.7.0",
     "html-webpack-plugin": "^3.2.0",
     "lodash": "^4.17.15",
+    "node-notifier": "^6.0.0",
     "node-sass": "^4.13.1",
     "prettier": "^1.19.1",
     "sass-loader": "^8.0.2",

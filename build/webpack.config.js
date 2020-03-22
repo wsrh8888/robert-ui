@@ -2,6 +2,7 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const VueLoaderPlugin = require('vue-loader/lib/plugin');
+const FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin');
 
 module.exports = {
   mode: "production",
@@ -54,7 +55,8 @@ module.exports = {
     host: '127.0.0.1',
     port: 8085,
     publicPath: '/',
-    hot: true
+    hot: true,
+    stats: 'errors-only'
   },
   plugins: [
     new CleanWebpackPlugin(), //打包时清理dist
@@ -62,6 +64,12 @@ module.exports = {
       template: './examples/index.tpl',
     }),
     new VueLoaderPlugin(),
+    new FriendlyErrorsWebpackPlugin({
+      compilationSuccessInfo: {
+        messages: [`Your application is running here: http://127.0.0.1:8085`],
+      }
+
+    })
   ],
   resolve: {
     extensions: ['.tsx', '.ts', '.js', '.vue', '.json'],
