@@ -1,14 +1,25 @@
 {
   "name": "robert-ui",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "",
+  "main": "lib/element-ui.common.js",
   "scripts": {
     "bootstrap": " npm i || yarn",
     "dev": "webpack-dev-server --watch -inline --progress  --config build/webpack.config.js",
-    "build": "webpack --config build/webpack.config.js"
+    "build": "webpack --config build/webpack.config.js",
+    "theme_dev": "webpack-dev-server --watch -inline --progress  --config build/webpack.common.js"
   },
-  "author": "",
+  "files": [
+    "lib",
+    "src",
+    "packages"
+  ],
+  "author": "Robert",
   "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git@gitee.com:dawwdadfrf/robert-ui.git"
+  },
   "devDependencies": {
     "@types/lodash": "^4.14.149",
     "@types/node": "^13.9.1",
@@ -25,6 +36,7 @@
     "node-notifier": "^6.0.0",
     "node-sass": "^4.13.1",
     "prettier": "^1.19.1",
+    "robert-ui": "^1.0.1",
     "sass-loader": "^8.0.2",
     "style-loader": "^1.1.3",
     "ts-loader": "^6.2.1",
