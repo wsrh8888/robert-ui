@@ -1,6 +1,6 @@
 <template>
     <transition name="el-alert-fade">
-        <div>
+        <div class="rb-alert">
             <i></i>
             <slot>{{ title }}</slot>
         </div>

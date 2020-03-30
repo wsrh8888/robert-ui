@@ -1,2 +1,10 @@
-@import "function";
-@import "../common/var";
+@import  "function";
+// @import "../common/var";
+
+@mixin b($block) {
+  $B: $namespace+'-'+$block !global;
+
+  .#{$B} {
+    @content;
+  }
+}
