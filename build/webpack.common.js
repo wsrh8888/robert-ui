@@ -7,7 +7,7 @@ const FriendlyErrorsWebpackPlugin = require("friendly-errors-webpack-plugin");
 module.exports = {
     mode: "production",
     entry: {
-        app: ["./src/index.js"]
+        app: ["./src/index.ts"]
     },
     devtool: "inline-source-map",
     module: {
