@@ -3,6 +3,7 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const VueLoaderPlugin = require("vue-loader/lib/plugin");
 const FriendlyErrorsWebpackPlugin = require("friendly-errors-webpack-plugin");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 module.exports = {
     mode: "production",
@@ -29,14 +30,18 @@ module.exports = {
                 test: /\.(scss|css)$/,
                 use: [
                     {
-                        loader: "style-loader" // 将 JS 字符串生成为 style 节点
+                        loader: MiniCssExtractPlugin.loader,
+                        options: {
+                            // 这里可以指定一个 publicPath
+                            // 默认使用 webpackOptions.output中的publicPath
+                            // publicPath的配置，和plugins中设置的filename和chunkFilename的名字有关
+                            // 如果打包后，background属性中的图片显示不出来，请检查publicPath的配置是否有误
+                            publicPath: "./"
+                            // publicPath: devMode ? './' : '../',   // 根据不同环境指定不同的publicPath
+                        }
                     },
-                    {
-                        loader: "css-loader" // 将 CSS 转化成 CommonJS 模块
-                    },
-                    {
-                        loader: "sass-loader" // 将 Sass 编译成 CSS
-                    }
+                    "css-loader",
+                    "sass-loader"
                 ]
             }
         ]
@@ -70,6 +75,10 @@ module.exports = {
                     `Your application is running here: http://127.0.0.1:8085`
                 ]
             }
+        }),
+        new MiniCssExtractPlugin({
+            filename: "[name].css",
+            chunkFilename: "[id].css"
         })
     ],
     resolve: {

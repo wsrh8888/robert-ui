@@ -2,13 +2,13 @@ const path = require("path");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const VueLoaderPlugin = require("vue-loader/lib/plugin");
 const UglifyJSPlugin = require("uglifyjs-webpack-plugin");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 module.exports = {
     mode: "production",
     entry: {
         app: ["./src/index.ts"]
     },
-    devtool: "source-map",
     module: {
         rules: [
             {
@@ -29,14 +29,18 @@ module.exports = {
                 test: /\.(scss|css)$/,
                 use: [
                     {
-                        loader: "style-loader" // 将 JS 字符串生成为 style 节点
+                        loader: MiniCssExtractPlugin.loader,
+                        options: {
+                            // 这里可以指定一个 publicPath
+                            // 默认使用 webpackOptions.output中的publicPath
+                            // publicPath的配置，和plugins中设置的filename和chunkFilename的名字有关
+                            // 如果打包后，background属性中的图片显示不出来，请检查publicPath的配置是否有误
+                            publicPath: "./"
+                            // publicPath: devMode ? './' : '../',   // 根据不同环境指定不同的publicPath
+                        }
                     },
-                    {
-                        loader: "css-loader" // 将 CSS 转化成 CommonJS 模块
-                    },
-                    {
-                        loader: "sass-loader" // 将 Sass 编译成 CSS
-                    }
+                    "css-loader",
+                    "sass-loader"
                 ]
             }
         ]
@@ -53,8 +57,19 @@ module.exports = {
     plugins: [
         new CleanWebpackPlugin(), //打包时清理dist
         new VueLoaderPlugin(),
-        new UglifyJSPlugin({
-            sourceMap: true
+        // new UglifyJSPlugin({
+        //     uglifyOptions: {
+        //         compress: {
+        //             drop_debugger: true,
+        //             drop_console: true
+        //         }
+        //     },
+        //     sourceMap: true,
+        //     parallel: true
+        // }),
+        new MiniCssExtractPlugin({
+            filename: "[name].css",
+            chunkFilename: "[id].css"
         })
     ],
     resolve: {
