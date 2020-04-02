@@ -1,15 +1,14 @@
 const path = require("path");
-const HtmlWebpackPlugin = require("html-webpack-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const VueLoaderPlugin = require("vue-loader/lib/plugin");
-const FriendlyErrorsWebpackPlugin = require("friendly-errors-webpack-plugin");
+const UglifyJSPlugin = require("uglifyjs-webpack-plugin");
 
 module.exports = {
     mode: "production",
     entry: {
         app: ["./src/index.ts"]
     },
-    devtool: "inline-source-map",
+    devtool: "source-map",
     module: {
         rules: [
             {
@@ -51,26 +50,15 @@ module.exports = {
     optimization: {
         minimize: false //必须为false。否则在生产环境无法解析组件
     },
-    devServer: {
-        host: "127.0.0.1",
-        port: 8085,
-        publicPath: "/",
-        hot: true,
-        stats: "errors-only"
-    },
     plugins: [
         new CleanWebpackPlugin(), //打包时清理dist
         new VueLoaderPlugin(),
-        new FriendlyErrorsWebpackPlugin({
-            compilationSuccessInfo: {
-                messages: [
-                    `Your application is running here: http://127.0.0.1:8085`
-                ]
-            }
+        new UglifyJSPlugin({
+            sourceMap: true
         })
     ],
     resolve: {
-        extensions: [".tsx", ".ts", ".js", ".vue", ".json"],
+        extensions: [".ts", ".js", ".vue", ".json"],
         alias: {
             main: path.resolve(__dirname, "../src"),
             packages: path.resolve(__dirname, "../packages"),
@@ -78,7 +66,7 @@ module.exports = {
         },
         modules: ["node_modules"]
     },
-
+    externals: ["vue"], //不需要打包的内容
     output: {
         path: path.resolve(process.cwd(), "./lib"),
         publicPath: "/dist/",
