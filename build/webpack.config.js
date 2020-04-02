@@ -73,7 +73,7 @@ module.exports = {
         })
     ],
     resolve: {
-        extensions: [".tsx", ".ts", ".js", ".vue", ".json"],
+        extensions: [".ts", ".js", ".vue", ".json"],
         alias: {
             main: path.resolve(__dirname, "../src"),
             packages: path.resolve(__dirname, "../packages"),
