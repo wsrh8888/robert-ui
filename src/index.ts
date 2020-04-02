@@ -1,5 +1,5 @@
 import Alert from "../packages/alert/index";
-
+import "../packages/theme-chalk/src/index.scss";
 const components = [Alert];
 const install = function(Vue, opts = {}) {
     components.forEach(component => {

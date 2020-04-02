@@ -15,7 +15,6 @@ module.exports = {
             {
                 test: /\.vue$/,
                 loader: "vue-loader"
-                // options: vueLoaderConfig
             },
             {
                 test: /\.tsx?$/,
@@ -61,10 +60,6 @@ module.exports = {
     },
     plugins: [
         new CleanWebpackPlugin(), //打包时清理dist
-        new HtmlWebpackPlugin({
-            //打包生成新的html文件
-            template: "./examples/index.tpl"
-        }),
         new VueLoaderPlugin(),
         new FriendlyErrorsWebpackPlugin({
             compilationSuccessInfo: {
@@ -79,8 +74,7 @@ module.exports = {
         alias: {
             main: path.resolve(__dirname, "../src"),
             packages: path.resolve(__dirname, "../packages"),
-            examples: path.resolve(__dirname, "../examples"),
-            "element-ui": path.resolve(__dirname, "../")
+            examples: path.resolve(__dirname, "../examples")
         },
         modules: ["node_modules"]
     },
@@ -88,10 +82,10 @@ module.exports = {
     output: {
         path: path.resolve(process.cwd(), "./lib"),
         publicPath: "/dist/",
-        filename: "element-ui.common.js",
+        filename: "robert-ui.common.js",
         chunkFilename: "[id].js",
         libraryExport: "default",
-        library: "ELEMENT",
+        library: "Robert",
         libraryTarget: "commonjs2"
     }
 };

@@ -77,8 +77,7 @@ module.exports = {
         alias: {
             main: path.resolve(__dirname, "../src"),
             packages: path.resolve(__dirname, "../packages"),
-            examples: path.resolve(__dirname, "../examples"),
-            "element-ui": path.resolve(__dirname, "../")
+            examples: path.resolve(__dirname, "../examples")
         },
         modules: ["node_modules"]
     },
