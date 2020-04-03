@@ -75,7 +75,7 @@ module.exports = {
         //     parallel: true
         // }),
         new MiniCssExtractPlugin({
-            filename: path.resolve("/theme-chalk", "./index.css"),
+            filename: "index.css",
             chunkFilename: "[id].css"
         })
     ],
