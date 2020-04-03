@@ -13,4 +13,41 @@
   display: flex;
   align-items: center;
   transform: opacity .2s;
+
+  @include when(center) {
+    justify-content: center;
+  }
+  
+  @include m(info) {
+    &.is-light {
+      // background-color: $--alert-danger-color;
+      color: $--color-danger;
+
+      .el-alert__description {
+        color: $--color-danger;
+      }
+    }
+
+    &.is-dark {
+      background-color: $--color-danger;
+      color: $--color-white;
+    }
+  }
+
+  @include e(icon){
+    font-size: $--alert-icon-size;
+    width: $--alert-icon-size;
+  }
+  @include e(content) {
+    display: table-cell;
+    padding: 0 8px;
+  }
+  @include e(title) {
+    font-size: $--alert-title-font-size;
+    line-height: 18px;
+    @include when(bold) {
+      font-weight: bold;
+    }
+  }
+
 }
