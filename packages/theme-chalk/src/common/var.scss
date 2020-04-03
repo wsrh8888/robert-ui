@@ -1,13 +1,5 @@
 
 
-/* Alert
--------------------------- */
-$--alert-padding: 8px 16px !default;
-$--alert-title-font-size: 13px !default;
-// $--alert-info-color: $--color-info-lighter !default;
-// $--alert-border-radius: $--border-radius-base !default;
-
-
 /* Color
 -------------------------- */
 /// color|1|Background Color|4
@@ -15,6 +7,36 @@ $--color-white: #FFFFFF !default;
 $--color-info: #909399 !default;
 $--color-danger: #F56C6C !default;
 // $--alert-danger-color: $--color-danger-lighter !default;
+$--color-success: #67C23A !default;
+$--color-warning: #E6A23C !default;
+
+/// borderRadius|1|Radius|0
+$--border-radius-base: 4px !default;
+/// color|1|Font Color|2
+$--color-text-placeholder: #C0C4CC !default;
+
+$--color-success-lighter: mix($--color-white, $--color-success, 90%) !default;
+$--color-info-lighter: mix($--color-white, $--color-info, 90%) !default;
+$--color-warning-lighter: mix($--color-white, $--color-warning, 90%) !default;
+$--color-danger-lighter: mix($--color-white, $--color-danger, 90%) !default;
+
+/* Alert
+-------------------------- */
+$--alert-padding: 8px 16px !default;
+$--alert-title-font-size: 13px !default;
+$--alert-info-color: $--color-info-lighter !default;
+$--alert-border-radius: $--border-radius-base !default;
+$--alert-description-font-size: 12px !default;
+/// height||Other|4
+$--alert-icon-large-size: 28px !default;
+/// fontSize||Font|1
+$--alert-close-font-size: 12px !default;
+/// fontSize||Font|1
+$--alert-close-customed-font-size: 13px !default;
+$--alert-success-color: $--color-success-lighter !default;
+$--alert-warning-color: $--color-warning-lighter !default;
+$--alert-danger-color: $--color-danger-lighter !default;
+
 
 /// borderRadius|1|Radius|0
 $--border-radius-base: 4px !default;
