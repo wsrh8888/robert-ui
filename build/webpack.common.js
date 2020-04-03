@@ -42,6 +42,13 @@ module.exports = {
                     "css-loader",
                     "sass-loader"
                 ]
+            },
+            {
+                test: /\.(svg|otf|ttf|woff2?|eot|gif|png|jpe?g)(\?\S*)?$/,
+                loader: "url-loader",
+                query: {
+                    limit: 10000
+                }
             }
         ]
     },
