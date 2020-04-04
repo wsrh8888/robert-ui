@@ -1,8 +1,8 @@
-@import  "function";
+@import "function";
 // @import "../common/var";
 
 @mixin b($block) {
-  $B: $namespace+'-'+$block !global;
+  $B: $namespace + "-" + $block !global;
   .#{$B} {
     @content;
   }
@@ -11,7 +11,11 @@
 @mixin m($modifier) {
   $currentSelector: "";
   @each $unit in $modifier {
-    $currentSelector: #{$currentSelector + & + $modifier-separator + $unit + ","};
+    $currentSelector: #{$currentSelector +
+      & +
+      $modifier-separator +
+      $unit +
+      ","};
   }
 
   @at-root {
@@ -29,7 +33,7 @@
   }
 }
 
-@mixin e($element){
+@mixin e($element) {
   $E: $element !global;
   $currentSelector: "";
   @each $unit in $element {

@@ -3,7 +3,7 @@
 
 @include b(alert) {
   width: 100%;
-  padding:$--alert-padding ;
+  padding: $--alert-padding;
   box-sizing: border-box;
   border-radius: $--alert-border-radius;
   position: relative;
@@ -12,7 +12,7 @@
   opacity: 1;
   display: flex;
   align-items: center;
-  transform: opacity .2s;
+  transform: opacity 0.2s;
 
   @include when(center) {
     justify-content: center;
@@ -84,7 +84,7 @@
     }
   }
 
-  @include e(icon){
+  @include e(icon) {
     font-size: $--alert-icon-size;
     width: $--alert-icon-size;
     @include when(big) {
