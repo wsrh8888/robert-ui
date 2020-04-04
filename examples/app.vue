@@ -1,11 +1,17 @@
 <template>
   <div>
     <div style="width:400px;margin-left:50px;margin-top:20px;">
+      <div>alert组件</div>
       <rb-alert type="warning" show-icon>
+        <template slot="title">
+          <div>标题</div>
+        </template>
         <template>
           <div>sfdsfdsfd</div>
         </template>
       </rb-alert>
+      <div>icon组件</div>
+      <rb-icon name="warning"></rb-icon>
     </div>
 
     <router-view />
