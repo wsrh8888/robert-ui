@@ -1,28 +1,24 @@
 <template>
-  <div>
-    <div style="width:400px;margin-left:50px;margin-top:20px;">
-      <div>alert组件</div>
-      <rb-alert type="warning" show-icon>
-        <template slot="title">
-          <div>标题</div>
-        </template>
-        <template>
-          <div>sfdsfdsfd</div>
-        </template>
-      </rb-alert>
-      <div>icon组件</div>
-      <rb-icon name="warning"></rb-icon>
+  <div id="app" :class="{ 'is-component': isComponent }">
+    <main-header v-if="lang !== 'play'"></main-header>
+    <div class="main-cnt">
+      <router-view></router-view>
     </div>
-
-    <router-view />
+    <main-footer v-if="lang !== 'play' && !isComponent"></main-footer>
   </div>
 </template>
 
 <script lang="ts">
 import Vue from "vue";
 import Component from "vue-class-component";
+import footer from "./components/footer.vue";
 
-@Component
+@Component({
+  components: {
+    mainFooter: footer
+  },
+  watch: {}
+})
 export default class App extends Vue {
   // 初始化数据
   msg = 123;
