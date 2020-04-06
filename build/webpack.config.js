@@ -63,11 +63,15 @@ module.exports = {
     minimize: false //必须为false。否则在生产环境无法解析组件
   },
   devServer: {
+    clientLogLevel: "warning",
     host: "127.0.0.1",
     port: 8085,
     publicPath: "/",
     hot: true,
-    stats: "errors-only"
+    compress: true,
+    quiet: true,
+    overlay: true,
+    contentBase: false
   },
   plugins: [
     new CleanWebpackPlugin(), //打包时清理dist
