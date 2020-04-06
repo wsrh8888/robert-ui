@@ -6,16 +6,13 @@
     "examples/**/*.vue",
     ".vue"
   ],
-  "exclude": [
-    "node_modules"
-  ],
+  "exclude": ["node_modules"],
   "typeAcquisition": {
     "enable": true
   },
-  "files": [
-    "./vue-shim.d.ts"
-  ],
+  "files": ["./vue-shim.d.ts"],
   "compilerOptions": {
+    "resolveJsonModule": true,
     "allowSyntheticDefaultImports": true,
     "experimentalDecorators": true,
     "allowJs": true,
@@ -24,20 +21,16 @@
     "moduleResolution": "node",
     "baseUrl": ".", // 工作根目录
     "isolatedModules": true,
-    "lib": [
-      "dom",
-      "es5",
-      "es6",
-      "es7",
-      "es2015.promise"
-    ],
+    "lib": ["dom", "es5", "es6", "es7", "es2015.promise"],
     "jsxFactory": "h",
     "sourceMap": true,
     "pretty": true,
-    "paths": { // 指定模块的路径，和baseUrl有关联，和webpack中resolve.alias配置一样
-      "main": [ //指定后可以在文件之直接 import * from 'src';
+    "paths": {
+      // 指定模块的路径，和baseUrl有关联，和webpack中resolve.alias配置一样
+      "main": [
+        //指定后可以在文件之直接 import * from 'src';
         "./src"
-      ],
-    },
+      ]
+    }
   }
 }
